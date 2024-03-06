@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import java.util.Random;
+import java.util.ArrayList;
 public class Main {
         public static void main(String[] args){
          // comments in java
@@ -45,8 +46,10 @@ public class Main {
                 //loops(args);
                 //arrays(args);
                 //strmethods(args);
-                wrapperclasses(args);
-
+//                wrapperclasses(args);
+                 //arraylist(args);
+//                 foreachloop(args);
+                  methods(args);
         }
 
         public static void inputs(String[] args){
@@ -288,16 +291,111 @@ public class Main {
         }
 
         public static void wrapperclasses(String[] args){
-                // wrapper classes
-                // byte
-                // short
-                // int
-                // long
-                // float
-                // double
-                // char
-                // boolean
-                // String
+            // wrapper classes provides a way to use primitive data types as reference data types
+            // reference data types contains some useful methods
+            // can be used with collections egs arraylist
+
+            // primitive      // reference
+            // int            Integer
+            // long           Long
+            // float          Float
+            // double         Double
+            // char           Character
+            // boolean        Boolean
+
+            // autoboxing = the automatic conversion that java makes between primitive and reference data types
+            // unboxing = the reverse of autoboxing
+
+            // egs using autoboxing
+            int x = 5;
+            Integer y = x;
+
+            boolean z = true;
+            Boolean a = z;
+
+            char c = 'a';
+            Character d = c;
+
+            String b = "name";
+
+        }
+
+        public static  void arraylist(String[] args){
+            // ArrayList unlike regular arrays are resizable and
+            // elements can be added after compilation phase
+            // store reference data types i.e the value types of the arraylist are going to be wrapper classes
+            // egs Boolean,Integer etc
+
+            ArrayList<String> food = new ArrayList<String>();
+            // arraylist methods
+            // use the .add() method to add values to arraylists
+            food.add("pizza");
+            food.add("sushi");
+            food.add("burger");
+
+            // use the .set() method to change values in an arraylist
+            food.set(1, "cake");
+            //use the.remove for taking out values
+            food.remove(0);
+            // use the .size() method to get the size of an arraylist
+            int size = food.size();
+            System.out.println(size);
+
+            // use .clear() method to clear an arraylist
+            food.clear();
+
+            for (int i=0; i < food.size(); i++){
+                System.out.println(food.get(i));
+            }
+
+            // 2D arraylists i,e arrays of arrays
+
+            ArrayList<ArrayList<String>> groceryList = new ArrayList<>();
+
+            ArrayList<String> bakeryList = new ArrayList<>();
+            bakeryList.add("pasta");
+            bakeryList.add("bread");
+            bakeryList.add("donuts");
+
+            ArrayList<String>  produceList = new ArrayList<>();
+            produceList.add("carrots");
+            produceList.add("tomatoes");
+            produceList.add("onions");
+
+            ArrayList<String> drinks = new ArrayList<>();
+            drinks.add("soda");
+            drinks.add("coffee");
+
+            groceryList.add(bakeryList);
+            groceryList.add(produceList);
+            groceryList.add(drinks);
+            // printing the entire grocery
+            System.out.println(groceryList);
+            // getting a single list
+            System.out.println(groceryList.get(0));
+            // getting a single item from the list
+            System.out.println(groceryList.get(0).get(1));
+
+        }
+        public static void foreachloop(String[] args){
+            String[] pets = {"dog", "cat", "fish","bird"};
+            // using arraylists
+            ArrayList<String> pets2 = new ArrayList<String>();
+            pets2.add("jellyfish");
+            pets2.add("snail");
+            pets2.add("kangaroo");
+            pets2.add("giraffe");
+            // the : represents "in"
+            for (String pet : pets){
+                System.out.println(pet);
+            }
+            for (String pet : pets2){
+                System.out.println(pet);
+            }
+        }
+
+        public static void methods(String[] args){
+
         }
 }
 
